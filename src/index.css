@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Punjabi Exclusive Design System - Traditional Bangladeshi E-commerce
+All colors MUST be HSL. Inspired by traditional patterns and modern commerce.
+*/
+
+@layer base {
+  :root {
+    /* New Color Palette */
+    --background: 0 0% 97%; /* off-white */
+    --foreground: 0 0% 11%; /* soft-black */
+
+    --card: 0 0% 97%; /* off-white */
+    --card-foreground: 0 0% 11%; /* soft-black */
+
+    --popover: 0 0% 97%; /* off-white */
+    --popover-foreground: 0 0% 11%; /* soft-black */
+
+    /* Primary: Luxury Gold */
+    --primary: 37 39% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 37 49% 70%;
+
+    /* Secondary: Deep Navy */
+    --secondary: 219 44% 18%;
+    --secondary-foreground: 0 0% 97%; /* off-white */
+
+    --muted: 0 0% 92%; /* slightly darker off-white */
+    --muted-foreground: 0 0% 29%; /* charcoal-grey */
+
+    /* Accent: Burnt Orange */
+    --accent: 15 62% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 15 72% 65%;
+
+    --destructive: 0 75% 55%; /* Keep existing destructive color */
+    --destructive-foreground: 0 0% 100%; /* Keep existing destructive color */
+
+    --border: 0 0% 85%; /* lighter charcoal-grey */
+    --input: 0 0% 85%; /* lighter charcoal-grey */
+    --ring: 37 39% 60%; /* luxury-gold */
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(219 44% 18%), hsl(219 54% 10%)); /* deep-navy gradient */
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 97%), hsl(0 0% 90%)); /* off-white gradient */
+    --gradient-accent: linear-gradient(135deg, hsl(15 62% 55%), hsl(25 70% 45%)); /* burnt-orange gradient */
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsl(0 0% 11% / 0.1); /* soft-black shadow */
+    --shadow-hero: 0 10px 40px hsl(219 44% 18% / 0.2); /* deep-navy shadow */
+    --shadow-product: 0 8px 30px hsl(0 0% 11% / 0.15); /* soft-black shadow */
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 97%; /* off-white */
+    --sidebar-foreground: 0 0% 11%; /* soft-black */
+    --sidebar-primary: 37 39% 60%; /* luxury-gold */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 62% 55%; /* burnt-orange */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 85%; /* lighter charcoal-grey */
+    --sidebar-ring: 37 39% 60%; /* luxury-gold */
+  }
+
+  .dark {
+    /* Dark mode with new color palette */
+    --background: 0 0% 11%; /* soft-black */
+    --foreground: 0 0% 97%; /* off-white */
+
+    --card: 219 44% 12%; /* darker deep-navy */
+    --card-foreground: 0 0% 97%; /* off-white */
+
+    --popover: 219 44% 12%; /* darker deep-navy */
+    --popover-foreground: 0 0% 97%; /* off-white */
+
+    --primary: 37 39% 60%; /* luxury-gold */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 37 49% 70%;
+
+    --secondary: 219 44% 25%; /* lighter deep-navy */
+    --secondary-foreground: 0 0% 97%; /* off-white */
+
+    --muted: 0 0% 20%; /* darker charcoal-grey */
+    --muted-foreground: 0 0% 70%; /* lighter charcoal-grey */
+
+    --accent: 15 62% 55%; /* burnt-orange */
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 15 72% 65%;
+
+    --destructive: 0 65% 55%; /* Keep existing destructive color */
+    --destructive-foreground: 0 0% 100%; /* Keep existing destructive color */
+
+    --border: 0 0% 20%; /* charcoal-grey */
+    --input: 0 0% 20%; /* charcoal-grey */
+    --ring: 37 39% 60%; /* luxury-gold */
+    --sidebar-background: 0 0% 11%; /* soft-black */
+    --sidebar-foreground: 0 0% 97%; /* off-white */
+    --sidebar-primary: 37 39% 60%; /* luxury-gold */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 62% 55%; /* burnt-orange */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%; /* charcoal-grey */
+    --sidebar-ring: 37 39% 60%; /* luxury-gold */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Traditional Pattern Overlays */
+  .pattern-overlay {
+    position: relative;
+  }
+  
+  .pattern-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='theme('colors.off-white')' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  /* Bengali Font Support */
+  .font-bengali {
+    font-family: 'Noto Sans Bengali', 'SolaimanLipi', 'Kalpurush', sans-serif;
+  }
+
+  /* Custom Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Product Card Hover Effects */
+  .product-card {
+    transition: var(--transition-smooth);
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-product);
+  }
+
+  /* Traditional Button Styles */
+  .btn-traditional {
+    background: var(--gradient-accent);
+    border: none;
+    color: hsl(var(--accent-foreground));
+    font-weight: 600;
+    transition: var(--transition-bounce);
+  }
+
+  .btn-traditional:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px hsl(var(--accent) / 0.3);
+  }
+}

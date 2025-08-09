@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Set correct MIME types
+AddType application/javascript .js
+AddType application/javascript .mjs
+AddType text/css .css
+
+# Handle SPA routing - IMPORTANT ORDER
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteCond %{REQUEST_URI} !\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$
+RewriteRule ^(.*)$ /index.html [L,QSA]
